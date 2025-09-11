@@ -3,7 +3,7 @@ import requests
 
 categories = requests.get("http://127.0.0.1:8000/api/categories/").json()
 products = requests.get("http://127.0.0.1:8000/api/products/").json()
-print(categories)
+# print(categories)
 
 menu = ReplyKeyboardMarkup(
     keyboard=[

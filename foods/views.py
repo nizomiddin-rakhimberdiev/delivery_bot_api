@@ -23,13 +23,13 @@ class ProductListAPIView(APIView):
     
 class ProductDetailAPIView(APIView):
     def get(self, request, pk): 
-        product = self.get_object(pk)
+        product = Product.objects.get(pk=pk)
         if product is None:
             return Response(status=status.HTTP_404_NOT_FOUND)
         serializer = ProductSerializer(product)
         return Response(serializer.data)
     def put(self, request, pk):
-        product = self.get_object(pk)
+        product = Product.objects.get(pk=pk)
         if product is None:
             return Response(status=status.HTTP_404_NOT_FOUND)
         serializer = ProductSerializer(product, data=request.data)
@@ -38,7 +38,7 @@ class ProductDetailAPIView(APIView):
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     def delete(self, request, pk):
-        product = self.get_object(pk)
+        product = Product.objects.get(pk=pk)
         if product is None:
             return Response(status=status.HTTP_404_NOT_FOUND)
         product.delete()
