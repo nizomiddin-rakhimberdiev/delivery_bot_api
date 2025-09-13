@@ -3,7 +3,7 @@ from .views import (
     ProductListAPIView, ProductDetailAPIView,
     UserLocationListAPIView, UserLocationDetailAPIView,
     CategoryListAPIView, CategoryDetailAPIView,
-    ClientListAPIView, ClientDetailAPIView
+    ClientListAPIView, ClientDetailAPIView, CartListAPIView, CartDetailAPIView
 )
 
 urlpatterns = [
@@ -15,4 +15,6 @@ urlpatterns = [
     path('categories/<int:pk>/', CategoryDetailAPIView.as_view(), name='category-detail'),
     path('clients/', ClientListAPIView.as_view(), name='client-list'),
     path('clients/<int:pk>/', ClientDetailAPIView.as_view(), name='client-detail'),
+    path('carts/', CartListAPIView.as_view(), name='cart-list'),
+    path('carts/<int:pk>/', CartDetailAPIView.as_view(), name='cart-detail'),
 ]

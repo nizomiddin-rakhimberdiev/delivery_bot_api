@@ -4,3 +4,6 @@ class AddCartState(StatesGroup):
     category = State()
     product = State()
     add_cart = State()
+
+class AddClientState(StatesGroup):
+    phone = State()

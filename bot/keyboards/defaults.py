@@ -14,6 +14,15 @@ menu = ReplyKeyboardMarkup(
     resize_keyboard=True
 )
 
+phone_btn = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton(text="Send phone number", request_contact=True)
+        ]
+    ],
+    resize_keyboard=True
+)
+
 def get_categories_btn():
     buttons = [
             [KeyboardButton(text=category['name'])]
