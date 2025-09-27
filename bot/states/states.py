@@ -7,3 +7,7 @@ class AddCartState(StatesGroup):
 
 class AddClientState(StatesGroup):
     phone = State()
+
+class OrderState(StatesGroup):
+    address = State()
+    confirm = State()

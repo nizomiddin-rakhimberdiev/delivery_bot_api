@@ -11,3 +11,11 @@ def add_to_cart_btn(product_id: int, count: int):
             InlineKeyboardButton(text="🛒 Savatga qo'shish", callback_data=f"add_to_cart:{product_id}")
         ]
     ])
+
+
+def get_order(user_id: int):
+    return InlineKeyboardMarkup(inline_keyboard=[
+        [
+            InlineKeyboardButton(text="Buyurtma berish", callback_data=f"order:{user_id}")
+        ]
+    ])

@@ -55,7 +55,7 @@ class Order(models.Model):
         ('Cancelled', 'Cancelled')
     ]
     user = models.ForeignKey(Client, on_delete=models.CASCADE)
-    products = models.ManyToManyField(Product, through='OrderItem')
+    products = models.TextField()
     total_price = models.IntegerField()
     address = models.TextField()
     status = models.CharField(max_length=50, default='Pending')

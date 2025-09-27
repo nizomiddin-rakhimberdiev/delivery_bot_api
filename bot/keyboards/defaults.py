@@ -8,7 +8,8 @@ products = requests.get("http://127.0.0.1:8000/api/products/").json()
 menu = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='Menu')
+            KeyboardButton(text='Menu'),
+            KeyboardButton(text='Cart')
         ]
     ],
     resize_keyboard=True
@@ -18,6 +19,15 @@ phone_btn = ReplyKeyboardMarkup(
     keyboard=[
         [
             KeyboardButton(text="Send phone number", request_contact=True)
+        ]
+    ],
+    resize_keyboard=True
+)
+
+location_btn = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton(text="Send location", request_location=True)
         ]
     ],
     resize_keyboard=True
